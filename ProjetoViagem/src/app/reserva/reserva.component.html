@@ -1,0 +1,52 @@
+<!-- <div class="titulo">
+    <h1 class="hlogin">Reserva</h1>
+</div> -->
+
+<div class="container col-md-10">
+  <h1 class="mt-4">Reserva</h1>
+  <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item active">Consulta</li>
+  </ol>
+</div>
+<div class="container col-md-10">
+  
+  <div class="formulario">
+    <div class="row">
+      <form>
+          <div class="form-group">
+            <label>CLIENTE: </label>
+            <select class="form-control" [ngModelOptions]="{standalone:true}" [(ngModel)]="reserva.idCliente">
+                  <option value="">Selecione...</option>
+                  <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
+                  {{ cliente.nome }}</option> 
+            </select>
+          </div>
+          <label>ORIGEM: </label>
+          <select class="form-control" >
+                <option value="">Selecione...</option>
+                <option [ngValue] ="1">São Paulo</option>
+                <option [ngValue] ="2">Rio de Janeiro</option>
+                <option [ngValue] ="3">Minas Gerais</option>
+                <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
+                {{ cliente.nome }}
+                </option> 
+          </select>
+          <label>DESTINO: </label>
+          <select class="form-control" >
+            <option value="">Selecione...</option>
+            <option [ngValue] ="1">São Paulo</option>
+            <option [ngValue] ="2">Rio de Janeiro</option>
+            <option [ngValue] ="3">Minas Gerais</option>
+            <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
+            {{ cliente.nome }}
+            </option> 
+      </select>
+     
+        
+          <button type="submit" class="btn btn-primary" id="submit" name="submit" (click)=onSubmit()>Gerar Reserva</button>
+          <button type="submit" class="btn btn-primary voltar" (click)= reservaParaOpcao()>Voltar</button>
+        </form>
+    </div>
+        
+  </div>
+</div>
