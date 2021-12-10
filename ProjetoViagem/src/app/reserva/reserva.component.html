@@ -15,32 +15,28 @@
       <form>
           <div class="form-group">
             <label>CLIENTE: </label>
-            <select class="form-control" [ngModelOptions]="{standalone:true}" [(ngModel)]="reserva.idCliente">
+            <select class="form-control" [ngModelOptions]="{standalone:true}" [(ngModel)]="reserva.idCliente" required>
                   <option value="">Selecione...</option>
                   <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
                   {{ cliente.nome }}</option> 
             </select>
           </div>
           <label>ORIGEM: </label>
-          <select class="form-control" >
-                <option value="">Selecione...</option>
+          <select class="form-control" [(ngModel)]="reserva.origem" name="origem" required>
+                <option  value="">Selecione...</option>
                 <option [ngValue] ="1">São Paulo</option>
                 <option [ngValue] ="2">Rio de Janeiro</option>
                 <option [ngValue] ="3">Minas Gerais</option>
-                <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
-                {{ cliente.nome }}
-                </option> 
           </select>
           <label>DESTINO: </label>
-          <select class="form-control" >
+          <select class="form-control" [(ngModel)]="reserva.destino" name="destino" required>
             <option value="">Selecione...</option>
             <option [ngValue] ="1">São Paulo</option>
             <option [ngValue] ="2">Rio de Janeiro</option>
-            <option [ngValue] ="3">Minas Gerais</option>
-            <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
-            {{ cliente.nome }}
-            </option> 
+            <option [ngValue] ="3">Minas Gerais</option>           
       </select>
+          <label>DATA: </label>
+          <input type="text" class="form-control" [(ngModel)]="reserva.data" name="data" required>
      
         
           <button type="submit" class="btn btn-primary" id="submit" name="submit" (click)=onSubmit()>Gerar Reserva</button>

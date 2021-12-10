@@ -14,26 +14,26 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="nome">Nome: </label>
-            <input [(ngModel)]="cliente.nome" type="text" class="form-control" id="nome" name="nome" placeholder="Nome:">
+            <input [(ngModel)]="cliente.nome" type="text" class="form-control" id="nome" name="nome" placeholder="Nome:" required>
           </div>
           <div class="form-group col-md-6">
             <label for="email">Email: </label>
-            <input [(ngModel)]="cliente.email" type="email" class="form-control" id="email" name="email" placeholder="Email">
+            <input [(ngModel)]="cliente.email" type="email" class="form-control" id="email" name="email" placeholder="Email" required>
           </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
               <label for="cpf">CPF: </label>
-              <input [(ngModel)]="cliente.cpf" type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF">
+              <input [(ngModel)]="cliente.cpf" type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" required>
             </div>
             <div class="form-group col-md-6">
               <label for="telefone">Telefone </label>
-              <input [(ngModel)]="cliente.telefone" type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone">
+              <input [(ngModel)]="cliente.telefone" type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" required>
             </div>
           </div>
         <div class="form-group">
           <label for="endereco">Endereço</label>
-          <input [(ngModel)]="cliente.endereco" type="text" class="form-control" id="endereco" name="endereco" placeholder="Rua ..., nº 0">
+          <input [(ngModel)]="cliente.endereco" type="text" class="form-control" id="endereco" name="endereco" placeholder="Rua ..., nº 0" required>
         </div>
         <button type="submit" class="btn btn-primary" (click)= criarCliente()>Cadastrar</button>
         <button type="submit" class="btn btn-primary voltar" (click)= cadastrarParaOpcao()>Voltar</button>
