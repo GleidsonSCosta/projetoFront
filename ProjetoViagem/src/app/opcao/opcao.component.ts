@@ -19,6 +19,9 @@ export class OpcaoComponent implements OnInit {
   opcaoParaReserva(): void {
     this.router.navigate(['/reserva']);
   }
+  opcaoParaListaReserva(): void {
+    this.router.navigate(['/lista-reserva'])
+  }
 
   ngOnInit(): void {
   }

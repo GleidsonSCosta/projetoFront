@@ -14,4 +14,9 @@ export class ReservaService {
   salvarReserva(reserva: Reserva): Observable<Reserva>{
     return this.http.post<Reserva>(this.baseUrl, reserva)
   }
+
+  getReserva() : Observable<Reserva[]> {
+    return this.http.get<Reserva[]>(this.baseUrl);
+  }
+
 }

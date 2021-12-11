@@ -1,3 +1,4 @@
+import { ListaReservaComponent } from './lista-reserva/lista-reserva.component';
 import { LoginComponent } from './login/login.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { ConsultarComponent } from './consultar/consultar.component';
@@ -7,11 +8,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path:"", component: LoginComponent},
+  { path:"", component: OpcaoComponent},
   { path:"cadastrar", component: CadastrarComponent},
   { path: "consultar", component: ConsultarComponent},
   { path: "opcao", component: OpcaoComponent},
   { path: "reserva", component: ReservaComponent},
+  { path: "lista-reserva", component: ListaReservaComponent }
 ];
 
 @NgModule({

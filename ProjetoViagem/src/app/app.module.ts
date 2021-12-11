@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import{ FormsModule } from '@angular/forms';
+import { ListaReservaComponent } from './lista-reserva/lista-reserva.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import{ FormsModule } from '@angular/forms';
     OpcaoComponent,
     LoginComponent,
     ReservaComponent,
-    ConsultarComponent
+    ConsultarComponent,
+    ListaReservaComponent
   ],
   imports: [
     BrowserModule,

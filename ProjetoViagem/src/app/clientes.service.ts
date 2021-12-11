@@ -21,6 +21,7 @@ export class ClientesService {
     return this.http.get<Cliente[]>(this.baseUrl);
   }
 
+
   // getClientes():Cliente[]{
   //   let cliente = new Cliente();
   //   cliente.email = "teste@gmail.com";
