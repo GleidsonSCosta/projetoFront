@@ -1,3 +1,3 @@
-export class Estados{
+export class Estados {
     nomeEstado!: string;
 }

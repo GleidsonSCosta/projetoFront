@@ -1,4 +1,5 @@
 import { Cliente } from './cliente/cliente';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -9,15 +10,23 @@ import { Injectable } from '@angular/core';
 export class ClientesService {
 
 
-  baseUrl= "http://localhost:8080/api/clientes";
+  baseUrl = "http://localhost:8080/api/clientes";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private snackBar: MatSnackBar) { }
 
-  cadastrarCliente(cliente : Cliente): Observable<Cliente> {
+  mostrarMensagem(msg: string): void {
+    this.snackBar.open(msg, '', {
+      duration: 3000,
+      horizontalPosition: "right",
+      verticalPosition: "bottom"
+    })
+  }
+
+  cadastrarCliente(cliente: Cliente): Observable<Cliente> {
     return this.http.post<Cliente>(this.baseUrl, cliente)
   }
-  
-  getClientes() : Observable<Cliente[]> {
+
+  getClientes(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>(this.baseUrl);
   }
 

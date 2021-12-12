@@ -1,3 +1,4 @@
+import { ListaClienteComponent } from './lista-reserva/lista-cliente/lista-cliente.component';
 import { ListaReservaComponent } from './lista-reserva/lista-reserva.component';
 import { LoginComponent } from './login/login.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: "consultar", component: ConsultarComponent},
   { path: "opcao", component: OpcaoComponent},
   { path: "reserva", component: ReservaComponent},
-  { path: "lista-reserva", component: ListaReservaComponent }
+  { path: "lista-reserva", component: ListaReservaComponent },
+  {path: "lista-cliente", component: ListaClienteComponent}
 ];
 
 @NgModule({

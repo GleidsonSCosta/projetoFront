@@ -1,0 +1,52 @@
+<div class="container col-md-12">
+    <h1 class="mt-4">Resevevas do Cliente</h1>
+    <ol class="breadcrumb mb-4 bg-dark">
+      <li class="breadcrumb-item active text-light">Pesquisa por Cliente</li>
+    </ol>
+    <button type="submit" class="btn btn-warning" (click)=voltaListaReserva()>Voltar</button>
+  
+</div>
+<br>
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Cliente: </label>
+                <select class="form-control" [ngModelOptions]="{standalone:true}" [(ngModel)]="reserva.idCliente" name="cliente">
+                    <option value="" selected>Selecione...</option>
+                    <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
+                      {{ cliente.nome }}</option>
+                  </select><br>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+              <button type="submit" class="btn btn-success" (click)=getReservaClientePorId()>Consultar</button>
+           </div>
+         </div>
+        
+        <div class="container col-md-10">
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table table-condensed table-hover">
+                  <thead>
+                    <th>Código da Viagem</th>
+                    <th>Origem</th>
+                    <th>Destino</th>
+                    <th>Data</th>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let reserva of lista">
+                      <td>{{reserva.id}}</td>
+                      <td>{{ reserva.origem.nomeEstado }}</td>
+                      <td>{{ reserva.destino.nomeEstado }}</td>
+                      <td>{{ reserva.dataViagem }}</td>
+                    </tr>
+          
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    </form>
+</div>

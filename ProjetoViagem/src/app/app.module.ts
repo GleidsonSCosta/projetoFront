@@ -14,6 +14,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import{ FormsModule } from '@angular/forms';
 import { ListaReservaComponent } from './lista-reserva/lista-reserva.component';
+import { ListaClienteComponent } from './lista-reserva/lista-cliente/lista-cliente.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ListaReservaComponent } from './lista-reserva/lista-reserva.component';
     LoginComponent,
     ReservaComponent,
     ConsultarComponent,
-    ListaReservaComponent
+    ListaReservaComponent,
+    ListaClienteComponent
   ],
   imports: [
     BrowserModule,

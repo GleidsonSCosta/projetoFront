@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ReservaSalva } from './reservaSalva';
 import { Injectable } from '@angular/core';
@@ -7,9 +7,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ListaService {
-  baseUrl= "http://localhost:8080/api/viagem";
+  baseUrl = "http://localhost:8080/api/viagem";
+  baseUrlCliente = "http://localhost:8080/api/viagem/cliente"
   constructor(private http: HttpClient) { }
-  getReserva() : Observable<ReservaSalva[]> {
+  
+  getReserva(): Observable<ReservaSalva[]> {
     return this.http.get<ReservaSalva[]>(this.baseUrl);
   }
+  getReservaCliente(cliente: number): Observable<ReservaSalva[]> {
+    const httpParam = new HttpParams()
+    .set("cliente", cliente)
+    const url = this.baseUrlCliente + "?" + httpParam.toString();
+    return this.http.get<ReservaSalva[]>(url);
+  }
+  
 }

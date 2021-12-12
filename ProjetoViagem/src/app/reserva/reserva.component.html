@@ -1,48 +1,56 @@
-<!-- <div class="titulo">
-    <h1 class="hlogin">Reserva</h1>
-</div> -->
-
-<div class="container col-md-10">
+<div class="container col-md-12">
   <h1 class="mt-4">Reserva</h1>
-  <ol class="breadcrumb mb-4">
-      <li class="breadcrumb-item active">Selecione o cliente para a reserva:</li>
+  <ol class="breadcrumb mb-4 bg bg-dark">
+    <li class="breadcrumb-item active text-light">Selecione o cliente para a reserva:</li>
   </ol>
 </div>
-<div class="container col-md-10">
-  
-  <div class="formulario">
-    <div class="row">
-      <form>
-          <div class="form-group">
-            <label>CLIENTE: </label>
-            <select class="form-control" [ngModelOptions]="{standalone:true}" [(ngModel)]="reserva.idCliente" required>
-                  <option value="">Selecione...</option>
-                  <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
-                  {{ cliente.nome }}</option> 
-            </select>
-          </div>
-          <label>ORIGEM: </label>
-          <select class="form-control" [(ngModel)]="reserva.origem" name="origem" required>
-                <option  value="">Selecione...</option>
-                <option [ngValue] ="1">São Paulo</option>
-                <option [ngValue] ="2">Rio de Janeiro</option>
-                <option [ngValue] ="3">Minas Gerais</option>
-          </select>
-          <label>DESTINO: </label>
-          <select class="form-control" [(ngModel)]="reserva.destino" name="destino" required>
-            <option value="">Selecione...</option>
-            <option [ngValue] ="1">São Paulo</option>
-            <option [ngValue] ="2">Rio de Janeiro</option>
-            <option [ngValue] ="3">Minas Gerais</option>           
-      </select>
-          <label>DATA: </label>
-          <input type="text" class="form-control" [(ngModel)]="reserva.data" name="data" required>
-     
-        
-          <button type="submit" class="btn btn-primary" id="submit" name="submit" (click)=onSubmit()>Gerar Reserva</button>
-          <button type="submit" class="btn btn-primary voltar" (click)= reservaParaOpcao()>Voltar</button>
-        </form>
+<div class="container">
+  <form>
+    <div class="form-row">
+      <div class=" form-group col-md-12">
+        <label>Cliente: </label>
+        <select class="form-control" [ngModelOptions]="{standalone:true}" [(ngModel)]="reserva.idCliente" required>
+          <option value="">Selecione...</option>
+          <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
+            {{ cliente.nome }}</option>
+        </select>
+      </div>
     </div>
-        
-  </div>
+
+    <div class="form-row">
+      <div class=" form-grou col-md-6">
+        <label>Origem: </label>
+        <select class="form-control" [(ngModel)]="reserva.origem" name="origem" required>
+          <option value="">Selecione...</option>
+          <option [ngValue]="1">São Paulo</option>
+          <option [ngValue]="2">Rio de Janeiro</option>
+          <option [ngValue]="3">Minas Gerais</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Destino: </label>
+        <select class="form-control" [(ngModel)]="reserva.destino" name="destino" required>
+          <option value="">Selecione...</option>
+          <option [ngValue]="1">São Paulo</option>
+          <option [ngValue]="2">Rio de Janeiro</option>
+          <option [ngValue]="3">Minas Gerais</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label>Data: </label>
+        <input type="text" class="form-control" [(ngModel)]="reserva.data" name="data" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-success" id="submit" name="submit" (click)=onSubmit()>Gerar
+          Reserva</button>
+        <button type="submit" class="btn btn-warning voltar" (click)=reservaParaOpcao()>Voltar</button>
+      </div>
+     </div>
+
+  </form>
 </div>

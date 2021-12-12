@@ -1,8 +1,7 @@
+import { Cliente } from './../cliente/cliente';
 import { ClientesService } from './../clientes.service';
-import { CadastrarServiceService } from './cadastrar-service.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Cliente } from './cliente';
 
 @Component({
   selector: 'app-cadastrar',
@@ -12,19 +11,12 @@ import { Cliente } from './cliente';
 export class CadastrarComponent implements OnInit {
 
   cliente: Cliente;
-  // cliente: Cliente = {
-  //   nome:'',
-  //   email:'',
-  //   cpf:'',
-  //   telefone:'',
-  //   endereco:'' ,
-  // }
 
-  constructor(private router:Router, private cadastrarService:CadastrarServiceService, private service: ClientesService) {
+  constructor(private router: Router, private service: ClientesService) {
     this.cliente = new Cliente();
   }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
   }
 
   cadastrarParaOpcao(): void {
@@ -32,12 +24,12 @@ export class CadastrarComponent implements OnInit {
   }
 
   criarCliente(): void {
-    this.cadastrarService.cadastrarCliente(this.cliente).subscribe(() => {
-       this.cadastrarService.mostrarMensagem('cliente criado!')
-       this.router.navigate(['/cadastrar'])
+    this.service.cadastrarCliente(this.cliente).subscribe(() => {
+      this.service.mostrarMensagem('Cliente cadastrado com sucesso!')
+      this.cliente = new Cliente();
     })
 
-  
-}
+
+  }
 }
 

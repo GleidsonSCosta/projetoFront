@@ -15,11 +15,11 @@ export class ConsultarComponent implements OnInit {
 
   clientes: Cliente[] = [];
 
-  constructor(private router:Router, private service: ClientesService) { 
+  constructor(private router: Router, private service: ClientesService) {
 
   }
 
-  consultarParaOpcao():void {
+  consultarParaOpcao(): void {
     this.router.navigate(['/opcao']);
   }
   ngOnInit(): void {

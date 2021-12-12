@@ -1,34 +1,35 @@
+<div class="container col-md-12">
+  <h1 class="mt-4">Reservas Agendadas</h1>
+  <ol class="breadcrumb mb-4 bg-dark">
+    <li class="breadcrumb-item active text-light">Registro de Reservas</li>
+  </ol>
+  
+</div>
+<button type="submit" class="btn btn-success voltar" (click)=consultaCliente()>Consulta por Cliente</button>
+<button type="submit" class="btn btn-warning voltar" (click)=consReservParaOpcao()>Voltar</button><br><br>
+
 <div class="container col-md-10">
-    <h1 class="mt-4">Reservas Agendadas</h1>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">Registro de Reservas</li>
-    </ol>
-    <button type="submit" class="btn btn-primary voltar" (click)= consReservParaOpcao()>Voltar</button><br><br>
-  </div>
-  
-  
-  <div class="container col-md-10">
-    <div class="row">
-      <div class="col-md-12">
-        <table class="table table-condensed table-hover">
-          <thead>
-            <th>Código da Viagem</th>
-            <th>Nome</th>
-            <th>Origem</th>
-            <th>Destino</th>
-            <th>Data</th>
-          </thead>
-          <tbody>
-              <tr *ngFor="let reserva of lista">
-              <td>{{reserva.id}}</td>
-              <td>{{reserva.cliente.nome}}</td>
-              <td>{{ reserva.origem.nomeEstado }}</td>
-              <td>{{ reserva.destino.nomeEstado }}</td>
-              <td>{{ reserva.dataViagem }}</td>
-            </tr> 
-  
-          </tbody>
-        </table>
-      </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-condensed table-hover">
+        <thead>
+          <th>Código da Viagem</th>
+          <th>Nome</th>
+          <th>Origem</th>
+          <th>Destino</th>
+          <th>Data</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reserva of lista">
+            <td>{{reserva.id}}</td>
+            <td>{{reserva.cliente.nome}}</td>
+            <td>{{ reserva.origem.nomeEstado }}</td>
+            <td>{{ reserva.destino.nomeEstado }}</td>
+            <td>{{ reserva.dataViagem }}</td>
+          </tr>
+
+        </tbody>
+      </table>
     </div>
   </div>
+</div>

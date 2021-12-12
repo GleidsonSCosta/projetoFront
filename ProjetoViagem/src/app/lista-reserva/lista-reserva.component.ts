@@ -11,14 +11,19 @@ import { ReservaSalva } from './reservaSalva';
 export class ListaReservaComponent implements OnInit {
 
   lista: ReservaSalva[] = [];
-  constructor(private router: Router, private reservaService: ListaService) { 
-   
+ 
+
+  constructor(private router: Router, private reservaService: ListaService) {
+
   }
 
-  consReservParaOpcao(){
+  consReservParaOpcao() {
     this.router.navigate(["/opcao"]);
   }
-
+  consultaCliente(){
+    this.router.navigate(['/lista-cliente']);
+  }
+  
   ngOnInit(): void {
     this.reservaService.getReserva().subscribe(resposta => this.lista = resposta);
   }

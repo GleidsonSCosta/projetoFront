@@ -1,22 +1,27 @@
-<!-- <div class="titulo">
-    <h1 class="hlogin">Bem Vindo</h1>
-</div> -->
-
-<div class="container col-md-10">
+<div class="container col-md-12">
     <h1 class="mt-4">Serviços </h1>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">Selecione o serviço desejado: </li>
+    <ol class="breadcrumb mb-4  bg-dark">
+        <li class="breadcrumb-item active  text-light">Selecione o serviço desejado: </li>
     </ol>
 </div>
-<div class="bloco">
-        <button router-link="/cadastrar" class="btn btn-primary novobotao" (click)= opcaoParaCadastrar()>Cadastrar</button>
-</div>
-<div class="bloco">
-    <button router-link="/consultar" class="btn btn-primary novobotao" (click)= opcaoParaConsultar()>Consultar Cliente</button>
-</div>
-<div class="bloco">
-    <button router-link="/reserva" class="btn btn-primary novobotao" (click)= opcaoParaReserva()>Reserva</button>
-</div>
-<div class="bloco">
-    <button router-link="/lista-reserva" class="btn btn-primary novobotao" (click)= opcaoParaListaReserva()>Lista de Reservas</button>
+<div class="container">
+    <div class="d-grid gap-2 col-12 ">
+
+        <button router-link="/cadastrar" class="btn btn-primary col-6" (click)=opcaoParaCadastrar()>Cadastrar
+            Cliente</button><br><br>
+        <button router-link="/reserva" class="btn btn-primary col-6" (click)=opcaoParaReserva()>Cadastrar
+            Reserva</button>
+
+    </div><br>
+    <div class="d-grid gap-4 col-8 mx-auto">
+        
+            <button type="button" router-link="/lista-reserva" class="btn btn-primary col-6"
+                (click)=opcaoParaListaReserva()>Registro de
+                Reservas</button><br><br>
+        
+        
+            <button type="button" router-link="/consultar" class="btn btn-primary col-6" (click)=opcaoParaConsultar()>Regitro de
+                Clientes</button><br>
+        
+    </div>
 </div>

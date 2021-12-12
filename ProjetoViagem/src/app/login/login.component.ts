@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  loginParaOpcao(): void{
+  loginParaOpcao(): void {
     this.router.navigate(['/opcao']);
   }
 

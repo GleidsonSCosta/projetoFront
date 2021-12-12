@@ -16,30 +16,36 @@ import { ThrowStmt } from '@angular/compiler';
 })
 export class ReservaComponent implements OnInit {
 
-  clientes: Cliente[]= [];
+  clientes: Cliente[] = [];
   reserva: Reserva;
 
   constructor(
-    private router: Router, 
-    private clienteService: ClientesService, 
-    private reservaService: ReservaService) 
-  { 
+    private router: Router,
+    private clienteService: ClientesService,
+    private reservaService: ReservaService) {
     this.reserva = new Reserva();
   }
-  reservaParaOpcao(): void{
+  reservaParaOpcao(): void {
     this.router.navigate(['/opcao']);
   }
 
 
   ngOnInit(): void {
     this.clienteService.getClientes()
-    .subscribe(response => this.clientes = response);
+      .subscribe(response => this.clientes = response);
   }
 
-  onSubmit(){
-    this.reservaService.salvarReserva(this.reserva).subscribe(response => {
-      console.log(response);
+  // onSubmit(){
+  //   this.reservaService.salvarReserva(this.reserva).subscribe(response => {
+  //     console.log(response);
+  //   })
+  // }
+
+  onSubmit() {
+    this.reservaService.salvarReserva(this.reserva).subscribe(() => {
+      this.reservaService.mostrarMensagem('Reserva Realizada com sucesso!')
+      this.reserva = new Reserva();
     })
   }
-  
+
 }
