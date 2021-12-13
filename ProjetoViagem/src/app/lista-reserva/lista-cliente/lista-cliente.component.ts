@@ -16,15 +16,13 @@ export class ListaClienteComponent implements OnInit {
 
   clientes: Cliente[] = [];
   lista: ReservaSalva[] = [];
-  reserva: Reserva;
   cliente!: number;
+  mensagem!: string;
+
   constructor(
     private router: Router, 
     private service: ClientesService, 
-    private listaService: ListaService) 
-    { 
-      this.reserva = new Reserva;
-    }
+    private listaService: ListaService) { }
 
   voltaListaReserva(){
   this.router.navigate([('/lista-reserva')])
@@ -35,8 +33,13 @@ export class ListaClienteComponent implements OnInit {
   }
 
   getReservaClientePorId(){
-    console.log(this.cliente);
     this.listaService.getReservaCliente(this.cliente).subscribe(resposta => this.lista = resposta);
+    // if(this.lista.length >= 1){
+    //   this.mensagem = '';
+    // }else{
+    //   this.mensagem = "Nenhum registro encontrado.";
+    // }
+   
   }
 
 }

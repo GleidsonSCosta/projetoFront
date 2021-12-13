@@ -9,7 +9,7 @@
     <div class="form-row">
       <div class=" form-group col-md-12">
         <label>Cliente: </label>
-        <select class="form-control" [ngModelOptions]="{standalone:true}" [(ngModel)]="reserva.idCliente" required>
+        <select class="form-control border border-dark" [ngModelOptions]="{standalone:true}" [(ngModel)]="reserva.idCliente" required>
           <option value="">Selecione...</option>
           <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
             {{ cliente.nome }}</option>
@@ -20,7 +20,7 @@
     <div class="form-row">
       <div class=" form-grou col-md-6">
         <label>Origem: </label>
-        <select class="form-control" [(ngModel)]="reserva.origem" name="origem" required>
+        <select class="form-control border border-dark" [(ngModel)]="reserva.origem" name="origem" required>
           <option value="">Selecione...</option>
           <option [ngValue]="1">São Paulo</option>
           <option [ngValue]="2">Rio de Janeiro</option>
@@ -29,7 +29,7 @@
       </div>
       <div class="form-group col-md-6">
         <label>Destino: </label>
-        <select class="form-control" [(ngModel)]="reserva.destino" name="destino" required>
+        <select class="form-control border border-dark" [(ngModel)]="reserva.destino" name="destino" required>
           <option value="">Selecione...</option>
           <option [ngValue]="1">São Paulo</option>
           <option [ngValue]="2">Rio de Janeiro</option>
@@ -40,7 +40,7 @@
     <div class="form-row">
       <div class="form-group col-md-3">
         <label>Data: </label>
-        <input type="text" class="form-control" [(ngModel)]="reserva.data" name="data" required>
+        <input type="text" class="form-control border border-dark" [(ngModel)]="reserva.data" name="data" required>
       </div>
     </div>
 

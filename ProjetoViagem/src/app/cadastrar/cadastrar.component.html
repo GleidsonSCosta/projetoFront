@@ -10,29 +10,29 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="nome">Nome: </label>
-        <input [(ngModel)]="cliente.nome" type="text" class="form-control" id="nome" name="nome" placeholder="Nome:"
+        <input [(ngModel)]="cliente.nome" type="text" class="form-control border border-dark" id="nome" name="nome" placeholder="Nome:"
           required autofocus>
       </div>
       <div class="form-group col-md-6">
         <label for="email">Email: </label>
-        <input [(ngModel)]="cliente.email" type="email" class="form-control" id="email" name="email" placeholder="Email"
+        <input [(ngModel)]="cliente.email" type="email" class="form-control border border-dark" id="email" name="email" placeholder="Email"
           required>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="cpf">CPF: </label>
-        <input [(ngModel)]="cliente.cpf" type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" required>
+        <input [(ngModel)]="cliente.cpf" type="text" class="form-control border border-dark" id="cpf" name="cpf" placeholder="CPF" required>
       </div>
       <div class="form-group col-md-6">
         <label for="telefone">Telefone </label>
-        <input [(ngModel)]="cliente.telefone" type="text" class="form-control" id="telefone" name="telefone"
+        <input [(ngModel)]="cliente.telefone" type="text" class="form-control border border-dark" id="telefone" name="telefone"
           placeholder="Telefone" required>
       </div>
     </div>
     <div class="form-group">
       <label for="endereco">Endereço</label>
-      <input [(ngModel)]="cliente.endereco" type="text" class="form-control" id="endereco" name="endereco"
+      <input [(ngModel)]="cliente.endereco" type="text" class="form-control border border-dark" id="endereco" name="endereco"
         placeholder="Rua ..., nº 0" required>
     </div>
     <button type="submit" class="btn btn-success" (click)=criarCliente()>Cadastrar</button>

@@ -14,10 +14,11 @@ export class ListaService {
   getReserva(): Observable<ReservaSalva[]> {
     return this.http.get<ReservaSalva[]>(this.baseUrl);
   }
+
   getReservaCliente(cliente: number): Observable<ReservaSalva[]> {
-    const httpParam = new HttpParams()
-    .set("cliente", cliente)
-    const url = this.baseUrlCliente + "?" + httpParam.toString();
+    // const httpParam = new HttpParams()
+    // .set("", cliente)
+    const url = this.baseUrlCliente + "/" + cliente;
     return this.http.get<ReservaSalva[]>(url);
   }
   
