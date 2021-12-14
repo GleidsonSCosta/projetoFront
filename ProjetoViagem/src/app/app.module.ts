@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { OpcaoComponent } from './opcao/opcao.component';
-import { LoginComponent } from './login/login.component';
 import { ReservaComponent } from './reserva/reserva.component';
 import { ConsultarComponent } from './consultar/consultar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,7 +20,6 @@ import { ListaClienteComponent } from './lista-reserva/lista-cliente/lista-clien
     AppComponent,
     CadastrarComponent,
     OpcaoComponent,
-    LoginComponent,
     ReservaComponent,
     ConsultarComponent,
     ListaReservaComponent,

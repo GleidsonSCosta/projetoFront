@@ -18,28 +18,25 @@ export class ListaClienteComponent implements OnInit {
   lista: ReservaSalva[] = [];
   cliente!: number;
   mensagem!: string;
-
+  reserva!: Reserva;
   constructor(
-    private router: Router, 
-    private service: ClientesService, 
+    private router: Router,
+    private service: ClientesService,
     private listaService: ListaService) { }
 
-  voltaListaReserva(){
-  this.router.navigate([('/lista-reserva')])
+  voltaListaReserva() {
+    this.router.navigate([('/lista-reserva')])
   }
   ngOnInit(): void {
     this.service.getClientes()
       .subscribe(response => this.clientes = response)
   }
 
-  getReservaClientePorId(){
+  getReservaClientePorId() {
+
     this.listaService.getReservaCliente(this.cliente).subscribe(resposta => this.lista = resposta);
-    // if(this.lista.length >= 1){
-    //   this.mensagem = '';
-    // }else{
-    //   this.mensagem = "Nenhum registro encontrado.";
-    // }
-   
+      
   }
+  
 
 }

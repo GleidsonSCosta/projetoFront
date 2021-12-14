@@ -13,15 +13,12 @@
             <div class="col-md-4">
                 <label>Cliente: </label>
                 <select class="form-control border border-dark" [ngModelOptions]="{standalone:true}" [(ngModel)]="cliente" name="cliente">
-                    <option value="" selected>Selecione...</option>
+                    <!-- <option value="" selected>Selecione...</option> -->
                     <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
                       {{ cliente.nome }}</option>
                   </select><br>
                   <button type="submit" class="btn btn-primary" (click)=getReservaClientePorId()> Consultar</button>
-                  <!-- <div class="alert alert-warning" role="alert" *ngIf="mensagem">
-                    {{mensagem}}
-                  </div> -->
-                  
+                                   
             </div>  
             
             <div class="col-md-8">

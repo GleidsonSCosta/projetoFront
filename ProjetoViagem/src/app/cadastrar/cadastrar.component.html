@@ -10,30 +10,57 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="nome">Nome: </label>
-        <input [(ngModel)]="cliente.nome" type="text" class="form-control border border-dark" id="nome" name="nome" placeholder="Nome:"
-          required autofocus>
+        <input [(ngModel)]="cliente.nome" #name="ngModel" type="text" class="form-control border border-dark" id="nome"
+          name="nome" placeholder="Nome:" required autofocus >
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alerta">
+            <div *ngIf="name.errors?.['required']">
+              <p class="alerta">Preenchimento obrigatório.</p>
+            </div>
+          </div>
       </div>
+      
       <div class="form-group col-md-6">
         <label for="email">Email: </label>
-        <input [(ngModel)]="cliente.email" type="email" class="form-control border border-dark" id="email" name="email" placeholder="Email"
-          required>
+        <input [(ngModel)]="cliente.email" type="email" #email="ngModel" class="form-control border border-dark" id="email" name="email"
+          placeholder="Email:" ngModel required>
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alerta">
+            <div *ngIf="email.errors?.['required']">
+              <p class="alerta">Preenchimento obrigatório..</p>
+            </div>
+          </div>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="cpf">CPF: </label>
-        <input [(ngModel)]="cliente.cpf" type="text" class="form-control border border-dark" id="cpf" name="cpf" placeholder="CPF" required>
+        <input [(ngModel)]="cliente.cpf" type="text" #cpf="ngModel" class="form-control border border-dark" id="cpf" name="cpf"
+          placeholder="CPF: " required>
+          <div *ngIf="cpf.invalid && (cpf.dirty || cpf.touched)" class="alert alerta">
+            <div *ngIf="cpf.errors?.['required']">
+              <p class="alerta">Preenchimento obrigatório.</p>
+            </div>
+          </div>
       </div>
       <div class="form-group col-md-6">
         <label for="telefone">Telefone </label>
-        <input [(ngModel)]="cliente.telefone" type="text" class="form-control border border-dark" id="telefone" name="telefone"
-          placeholder="Telefone" required>
+        <input [(ngModel)]="cliente.telefone" type="text" #telefone=ngModel class="form-control border border-dark" id="telefone"
+          name="telefone" placeholder="Telefone: " required>
+          <div *ngIf="telefone.invalid && (telefone.dirty || telefone.touched)" class="alert alerta">
+            <div *ngIf="telefone.errors?.['required']">
+              <p class="alerta">Preenchimento obrigatório.</p>
+            </div>
+          </div>
       </div>
     </div>
     <div class="form-group">
       <label for="endereco">Endereço</label>
-      <input [(ngModel)]="cliente.endereco" type="text" class="form-control border border-dark" id="endereco" name="endereco"
-        placeholder="Rua ..., nº 0" required>
+      <input [(ngModel)]="cliente.endereco" type="text" #endereco=ngModel class="form-control border border-dark" id="endereco"
+        name="endereco" placeholder="Rua ..., nº 0" required>
+        <div *ngIf="telefone.invalid && (telefone.dirty || telefone.touched)" class="alert alerta">
+          <div *ngIf="telefone.errors?.['required']">
+            <p class="alerta">Preenchimento obrigatório.</p>
+          </div>
+        </div>
     </div>
     <button type="submit" class="btn btn-success" (click)=criarCliente()>Cadastrar</button>
     <button type="submit" class="btn btn-warning voltar" (click)=cadastrarParaOpcao()>Voltar</button>

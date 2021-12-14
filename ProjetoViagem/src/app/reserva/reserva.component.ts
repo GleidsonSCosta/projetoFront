@@ -19,6 +19,7 @@ export class ReservaComponent implements OnInit {
   clientes: Cliente[] = [];
   reserva: Reserva;
 
+
   constructor(
     private router: Router,
     private clienteService: ClientesService,
@@ -42,10 +43,19 @@ export class ReservaComponent implements OnInit {
   // }
 
   onSubmit() {
-    this.reservaService.salvarReserva(this.reserva).subscribe(() => {
-      this.reservaService.mostrarMensagem('Reserva Realizada com sucesso!')
-      this.reserva = new Reserva();
-    })
+    if(this.reserva.origem != this.reserva.destino && this.reserva.idCliente !=null){
+      this.reservaService.salvarReserva(this.reserva).subscribe(() => {
+        this.reservaService.mostrarMensagem('Reserva Realizada com sucesso!')
+        this.reserva = new Reserva();
+      })
+    } else if(this.reserva.idCliente == null){
+      this.reservaService.mostrarMensagem('Selecione um cliente')
+
+    }else{
+      this.reservaService.mostrarMensagem('Selecione um destino diferente da origem.')
+    }
+    
+    
   }
 
 }

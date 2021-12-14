@@ -5,6 +5,7 @@
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
 }
 
 .voltar{
@@ -12,3 +13,12 @@ body{
     
 }
 
+
+.alerta{
+    color: red;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    margin-top: 5px;
+}

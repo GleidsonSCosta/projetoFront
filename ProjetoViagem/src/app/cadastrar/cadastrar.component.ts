@@ -27,6 +27,7 @@ export class CadastrarComponent implements OnInit {
     this.service.cadastrarCliente(this.cliente).subscribe(() => {
       this.service.mostrarMensagem('Cliente cadastrado com sucesso!')
       this.cliente = new Cliente();
+    
     })
 
 

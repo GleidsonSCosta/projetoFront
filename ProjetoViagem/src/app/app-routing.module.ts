@@ -1,6 +1,6 @@
 import { ListaClienteComponent } from './lista-reserva/lista-cliente/lista-cliente.component';
 import { ListaReservaComponent } from './lista-reserva/lista-reserva.component';
-import { LoginComponent } from './login/login.component';
+
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { ConsultarComponent } from './consultar/consultar.component';
 import { OpcaoComponent } from './opcao/opcao.component';
